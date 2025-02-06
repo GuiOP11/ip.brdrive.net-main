@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Meu Ip Público</title>
+    <link rel="icon" type="image/x-icon" href="https://publico.brdrive.net/assinaturas/favicon.ico">
+    <!---bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+
+    <!-- estilos personalizados -->
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet"> <!--fonts-->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="javascript.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid align-items-center max-height-screen">
+            <div class="row content-wrap">
+                <div class="col-12">
+                    <nav>
+                        <div class="logo">
+                            <a href=""><img src="assets/img/logofooter.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                    </nav>
+                </div>
+            </div> <!--fim da row 1-->
+
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 d-none d-md-block">
+                    <div class="image-container">
+                        <img src="assets/img/novorecorte.png" class="img-fluid d-none d-md-block full-height-image"
+                            alt="">
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-6 pr-md-5">
+                    <div class="text-center text-md-left mt-4 mt-md-0">
+                        <h1 class="text-center pt-5"><b>Meu Endereço IP Público</b></h1>
+                        <p class="text-center">
+                            IPv4: <span id="ipv4_address">Aguardando...</span>
+                        </p>
+                        <p class="text-center">
+                            IPv6: <span id="ipv6_address">Aguardando...</span>
+                            <br><span id="ipv6_provider"></span>
+                        </p>
+                        <script>
+                            function getIPAddresses() {
+                                // Obtendo endereço IPv4
+                                fetch('https://api.ipify.org?format=json')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        document.getElementById('ipv4_address').textContent = data.ip;
+                                    })
+                                    .catch(error => {
+                                        console.error('Ocorreu um erro ao obter o endereço IPv4:', error);
+                                        document.getElementById('ipv4_address').textContent = 'Erro ao obter o endereço IPv4.';
+                                    });
+
+                                // Obtendo endereço IPv6
+                                fetch('https://api6.ipify.org?format=json')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        document.getElementById('ipv6_address').textContent = data.ip;
+                                    })
+                                    .catch(error => {
+                                        console.error('Ocorreu um erro ao obter o endereço IPv6:', error);
+                                        document.getElementById('ipv6_address').textContent = 'Endereço IPv6 não disponível.';
+                                    });
+                            }
+                            window.onload = getIPAddresses;
+                        </script>
+
+                        <h3 class="text-center pt-3 mt-4 mt-md-0"><b>Sobre a empresa</b></h3>
+                        <p class="text-center text-break lh-sm"> Com soluções em nuvem e segurança de dados, a BRDrive
+                            conta com
+                            uma
+                            estrutura própria, uma equipe especializada para tirar todas as
+                            suas dúvidas, todo o suporte ao cliente e qualidade nos nossos produtos e serviços. Não
+                            perca tempo, conheça a segurança que o nosso trabalho trará para sua empresa!
+                        </p>
+                        <div
+                            class="row justify-content-center justify-content-md-center align-items-center mt-4 mt-md-0">
+                            <div class="botao1 pt-2 pb-2">
+                                <a href="https://brdrive.net/"><span>Mais Informações</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container3">
+                        <iframe id="map" src="maps.html" class="vh-100  w-100" style="border: none;"></iframe>
+                    </div>
+
+                </div> <!--fim da coluna principal-->
+
+            </div> <!--fim da row 2-->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <footer class="text-center text-lg-start " style="background-color:#232417">
+                            <!-- Copyright -->
+                            <div class="text-center text-white p-2" style="background-color: #0f1002">
+                                © 2024 Copyright:
+                                <a class="text-white" href="https://brdrive.net/">BRDrive</a>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

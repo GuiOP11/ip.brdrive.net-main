@@ -1,0 +1,117 @@
+
+/* Reset de estilos básicos */
+* {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Fonte principal */
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #fff;
+    color: #353535;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Esconde a barra de rolagem */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilização do cabeçalho */
+nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #010246;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/* Logo menor e quadrada */
+.logo img {
+    width: 160px;
+    height: 50px;
+    object-fit: initial;
+}
+
+/* Estilização do formulário principal */
+main {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin-top: 80px;
+}
+
+h2 {
+    color: #03484c;
+    margin-bottom: 20px;
+}
+
+/* Inputs dos formulários */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botões */
+button, #corfundo {
+    width: 100%;
+    padding: 10px;
+    background-color: #03484c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button:hover, #corfundo:hover {
+    background-color: #012f30;
+}
+
+/* Links para navegação */
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: #03484c;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+li a:hover {
+    color: #012f30;
+}
+
+/* Ajuste do container principal */
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

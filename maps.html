@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa com Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet"> <!--fonts-->
+
+    <style>
+ 
+        #map {
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            max-height: 600px;
+        }
+
+        .nunito-uniquifier {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+
+        h1 {
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body class="pt-3">
+    <div class="d-flex justify-content-center align-items-center">
+            <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Coordenadas
+        const latitude = -27.0083;
+        const longitude = -51.1517;
+        const infoText = "Localização do seu provedor";
+
+        // Inicializa o mapa
+        const map = L.map('map').setView([latitude, longitude], 13);
+
+        // Adiciona a camada do mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // Adiciona um marcador com uma janela de informação
+        L.marker([latitude, longitude]).addTo(map)
+            .bindPopup(infoText)
+            .openPopup();
+    </script>
+</body>
+
+</html>
