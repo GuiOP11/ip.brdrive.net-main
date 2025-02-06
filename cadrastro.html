@@ -24,21 +24,20 @@
     </nav>
 
     <main>
-        <h2>Cadastro</h2>
-        <form action="orcamentos.html" method="get">
-           
+        <h1>Cadastrar</h1>
+        <form id="registerForm">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            
+        
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
+            <input type="email" id="registerEmail" name="email" required>
+        
             <label for="password">Senha</label>
-            <input type="password" placeholder="Senha" required>     
-
-            <input type="submit"  value="Enviar">
-            
+            <input type="password" id="registerPassword" placeholder="Senha" required>
+        
+            <button type="submit">Cadastrar</button>
         </form>
+        
     </main>
 </body>
 </html>
