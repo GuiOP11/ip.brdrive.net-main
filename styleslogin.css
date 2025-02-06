@@ -1,4 +1,3 @@
-
 /* Reset de estilos básicos */
 * {
     padding: 0 !important;
@@ -9,8 +8,8 @@
 /* Fonte principal */
 body {
     font-family: "Nunito", sans-serif;
-    background-color: #fff;
-    color: #353535;
+    background: linear-gradient(135deg, #03484c, #010246); /* Gradiente bonito */
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,66 +28,75 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #010246;
+    background-color: rgba(1, 2, 70, 0.9); /* Fundo semi-transparente */
     padding: 10px;
     width: 100%;
     position: absolute;
     top: 0;
 }
 
-/* Logo menor e quadrada */
+/* Logo */
 .logo img {
     width: 160px;
     height: 50px;
-    object-fit: initial;
+    object-fit: contain;
 }
 
 /* Estilização do formulário principal */
 main {
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
     text-align: center;
-    width: 300px;
+    width: 320px;
     margin-top: 80px;
+    backdrop-filter: blur(10px); /* Efeito de vidro */
 }
 
+/* Títulos */
 h2 {
-    color: #03484c;
+    color: #fff;
     margin-bottom: 20px;
 }
 
-/* Inputs dos formulários */
+/* Inputs */
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efeito ao focar nos inputs */
+input:focus {
+    border-color: #fff;
 }
 
 /* Botões */
 button, #corfundo {
     width: 100%;
-    padding: 10px;
-    background-color: #03484c;
+    padding: 12px;
+    background-color: #11722e;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    display: block;
-    text-align: center;
-    text-decoration: none;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 button:hover, #corfundo:hover {
-    background-color: #012f30;
+    background-color: #0a3d00;
 }
 
-/* Links para navegação */
+/* Links */
 li {
     list-style: none;
     margin-top: 10px;
@@ -96,22 +104,18 @@ li {
 
 li a {
     text-decoration: none;
-    color: #03484c;
+    color: #fff;
     font-weight: bold;
     transition: 0.3s;
-    display: inline-block;
-    padding: 5px 10px;
 }
 
 li a:hover {
-    color: #012f30;
+    color: #ccc;
 }
 
-/* Ajuste do container principal */
-.container-fluid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* Responsividade */
+@media (max-width: 400px) {
+    main {
+        width: 90%;
+    }
 }
-
